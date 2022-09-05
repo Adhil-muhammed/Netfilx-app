@@ -14,9 +14,7 @@ function Rowpost(props) {
       setShow(response.data.results);
     });
   }, []);
-  const movie = (np) => {
-    setShow(np);
-  };
+
   const movieHandler = (id) => {
     axios
       .get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
@@ -27,6 +25,17 @@ function Rowpost(props) {
         console.log(response.data.results);
       });
   };
+  const showOff = (i) => {
+    axios
+      .get(`/movie/${i}/videos?api_key=${API_KEY}&language=en-US`)
+      .then((response) => {
+        if (response.data.results.lenght != 0) {
+          setUrlId(response.data);
+        }
+        console.log(response.data.results);
+      });
+  };
+
   const opts = {
     height: "390",
     width: "100%",
@@ -43,9 +52,11 @@ function Rowpost(props) {
         {show.map((obj) => (
           <img
             onClick={() => movieHandler(obj.id)}
+            onDoubleClick={() => showOff(obj.i)}
             className={props.Action ? "sPoster" : "poster"}
             src={`${imageUrl + obj.backdrop_path}`}
           />
+          
         ))}
       </div>
 
