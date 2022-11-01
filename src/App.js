@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <NevBar />
       <Banner />
-      <Rowpost url={Netflixs} title="Netflixs Oginals" />
+      {/* <Rowpost url={Netflixs} title="Netflixs Oginals" Adhil/> */}
       <Rowpost url={horror} title="Horror" Action />
       <Rowpost url={action} title="Actions" Action />
       <Rowpost url={romance} title="Romance" Action />

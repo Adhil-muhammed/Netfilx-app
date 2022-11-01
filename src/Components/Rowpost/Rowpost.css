@@ -1,12 +1,19 @@
 .row{
-    margin-left:20px;
-    color:#fff;
+   
+    margin-left: 20px;
+    color: #fff;
+    background-color: black;
+
 }
 .posters{
   display: flex; 
   padding: 20px;
   overflow-x:scroll;
   overflow-y: hidden;
+ 
+}
+.poster:hover{
+    transform: scale(1.25);
 }
 .posters::-webkit-scrollbar{
     display:none ;
@@ -14,8 +21,9 @@
 .poster{
     max-height: 250px ;
     margin-right:10px ;
+    transition: transform 450ms;
 }
 .sPoster{
     max-height:100px;
     margin-right:10px ;
-}
+}  
